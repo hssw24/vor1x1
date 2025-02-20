@@ -11,7 +11,6 @@ export default function MultiplicationTrainer() {
   const [message, setMessage] = useState("");
   const [showNext, setShowNext] = useState(false);
   const [history, setHistory] = useState([]);
-  const [showApples, setShowApples] = useState(false);
 
   const handleAnswer = (selectedMultiplier) => {
     if (selectedMultiplier === task.multiplier) {
@@ -28,24 +27,16 @@ export default function MultiplicationTrainer() {
     setTask(generateTask());
     setMessage("");
     setShowNext(false);
-    setShowApples(false);
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#ffffff', padding: '16px', color: '#000000' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', minHeight: '100vh', width: '100vw', backgroundColor: '#ffffff', padding: '16px', color: '#000000', overflowY: 'auto' }}>
       <h1 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>Multiplikations-Übung</h1>
-      <button 
-        onClick={() => setShowApples(!showApples)}
-        style={{ marginBottom: '16px', padding: '12px', fontSize: '18px', backgroundColor: '#FFA500', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
-        Äpfel anzeigen
-      </button>
-      {showApples && (
-        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${task.factor}, auto)`, gap: '4px', marginBottom: '16px' }}>
-          {[...Array(task.multiplier * task.factor)].map((_, index) => (
-            <span key={index} style={{ fontSize: '24px' }}>🍏</span>
-          ))}
-        </div>
-      )}
+      <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(task.factor, 5)}, auto)`, gap: '4px', marginBottom: '16px', maxHeight: '150px', overflowY: 'auto' }}>
+        {[...Array(task.multiplier * task.factor)].map((_, index) => (
+          <span key={index} style={{ fontSize: '24px' }}>🍏</span>
+        ))}
+      </div>
       <p style={{ fontSize: '18px', marginBottom: '16px', color: '#000000' }}>{`${task.factor} + `.repeat(task.multiplier).slice(0, -2)} = ?</p>
       <p style={{ fontSize: '18px', marginBottom: '16px', color: '#000000' }}>x • {task.factor} = ?</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px', marginBottom: '16px' }}>
