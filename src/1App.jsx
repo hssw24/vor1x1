@@ -30,10 +30,11 @@ export default function MultiplicationTrainer() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#ffffff', padding: '16px', color: '#000000' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: `repeat(${task.factor}, auto)`, gap: '2px', marginBottom: '16px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100vw', backgroundColor: '#ffffff', padding: '16px', color: '#000000', overflowY: 'auto' }}>
+      <h1 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>Multiplikations-Übung</h1>
+      <div style={{ display: 'grid', gridTemplateColumns: `repeat(${task.factor}, auto)`, gap: '4px', marginBottom: '16px', maxHeight: '200px', overflowY: 'auto' }}>
         {[...Array(task.multiplier * task.factor)].map((_, index) => (
-          <span key={index} style={{ fontSize: '20px' }}>🍏</span>
+          <span key={index} style={{ fontSize: '24px' }}>🍏</span>
         ))}
       </div>
       <p style={{ fontSize: '18px', marginBottom: '16px', color: '#000000' }}>{`${task.factor} + `.repeat(task.multiplier).slice(0, -2)} = ?</p>
@@ -52,7 +53,7 @@ export default function MultiplicationTrainer() {
       {message && <p style={{ marginTop: '16px', fontSize: '18px', fontWeight: 'bold', color: '#000000' }}>{message}</p>}
       {showNext && <button onClick={handleNextTask} style={{ marginTop: '16px', padding: '12px', fontSize: '18px', backgroundColor: '#28a745', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Nächste Aufgabe</button>}
       <div style={{ marginTop: '20px', textAlign: 'left', color: '#000000' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: 'bold' }}>Aufgabenverlauf:</h3>
+        <h2 style={{ fontSize: '16px', fontWeight: 'bold' }}>Aufgabenverlauf:</h2>
         <ul>
           {history.map((item, index) => (
             <li key={index} style={{ fontSize: '14px', color: '#000000' }}>{item}</li>
