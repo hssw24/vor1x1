@@ -32,11 +32,6 @@ export default function MultiplicationTrainer() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#ffffff', padding: '16px', color: '#000000' }}>
       <h1 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>Multiplikations-Übung</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: `repeat(${task.factor}, auto)`, gap: '4px', marginBottom: '16px' }}>
-        {[...Array(task.multiplier * task.factor)].map((_, index) => (
-          <span key={index} style={{ fontSize: '24px' }}>🍏</span>
-        ))}
-      </div>
       <p style={{ fontSize: '18px', marginBottom: '16px', color: '#000000' }}>{`${task.factor} + `.repeat(task.multiplier).slice(0, -2)} = ?</p>
       <p style={{ fontSize: '18px', marginBottom: '16px', color: '#000000' }}>x • {task.factor} = ?</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px', marginBottom: '16px' }}>
