@@ -49,9 +49,9 @@ export default function MultiplicationTrainer() {
           ))}
         </div>
       )}
-      <p style={{ fontSize: '18px', marginBottom: '16px', color: '#000000' }}>{`${task.factor} + `.repeat(task.multiplier).slice(0, -2)} = ?</p>
-      <p style={{ fontSize: '18px', marginBottom: '16px', color: '#000000' }}>x • {task.factor} = ?</p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px', marginBottom: '16px' }}>
+      <p style={{ fontSize: '16px', marginBottom: '12px', color: '#000000' }}>{`${task.factor} + `.repeat(task.multiplier).slice(0, -2)} = ?</p>
+      <p style={{ fontSize: '16px', marginBottom: '12px', color: '#000000' }}>x • {task.factor} = ?</p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '4px', marginBottom: '12px' }}>
         {[...Array(10).keys()].map((num) => (
           <button
             key={num + 1}
