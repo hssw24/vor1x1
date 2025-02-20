@@ -30,10 +30,10 @@ export default function MultiplicationTrainer() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#f3f4f6', padding: '16px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#ffffff', padding: '16px', color: '#000000' }}>
       <h1 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>Multiplikations-Übung</h1>
-      <p style={{ fontSize: '18px', marginBottom: '16px' }}>{`${task.factor} + `.repeat(task.multiplier).slice(0, -2)} = ?</p>
-      <p style={{ fontSize: '18px', marginBottom: '16px' }}>x • {task.factor} = ?</p>
+      <p style={{ fontSize: '18px', marginBottom: '16px', color: '#000000' }}>{`${task.factor} + `.repeat(task.multiplier).slice(0, -2)} = ?</p>
+      <p style={{ fontSize: '18px', marginBottom: '16px', color: '#000000' }}>x • {task.factor} = ?</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px', marginBottom: '16px' }}>
         {[...Array(10).keys()].map((num) => (
           <button
@@ -45,13 +45,13 @@ export default function MultiplicationTrainer() {
           </button>
         ))}
       </div>
-      {message && <p style={{ marginTop: '16px', fontSize: '18px', fontWeight: 'bold' }}>{message}</p>}
+      {message && <p style={{ marginTop: '16px', fontSize: '18px', fontWeight: 'bold', color: '#000000' }}>{message}</p>}
       {showNext && <button onClick={handleNextTask} style={{ marginTop: '16px', padding: '12px', fontSize: '18px', backgroundColor: '#28a745', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Nächste Aufgabe</button>}
-      <div style={{ marginTop: '20px', textAlign: 'left' }}>
+      <div style={{ marginTop: '20px', textAlign: 'left', color: '#000000' }}>
         <h2 style={{ fontSize: '16px', fontWeight: 'bold' }}>Aufgabenverlauf:</h2>
         <ul>
           {history.map((item, index) => (
-            <li key={index} style={{ fontSize: '14px' }}>{item}</li>
+            <li key={index} style={{ fontSize: '14px', color: '#000000' }}>{item}</li>
           ))}
         </ul>
       </div>
