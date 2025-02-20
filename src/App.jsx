@@ -14,9 +14,10 @@ export default function MultiplicationTrainer() {
   const [showApples, setShowApples] = useState(false);
 
   const handleAnswer = (selectedMultiplier) => {
+    setShowApples(false); // Äpfelanzeige automatisch ausblenden
     if (selectedMultiplier === task.multiplier) {
       const result = `${task.factor} + `.repeat(task.multiplier).slice(0, -2) + ` = ${task.factor * task.multiplier} ( ${task.multiplier} • ${task.factor} = ${task.factor * task.multiplier} )`;
-      setHistory([result, ...history]);
+      setHistory([result, ...history.slice(0, 2)]); // Verlauf auf die letzten 3 begrenzen
       setMessage("Richtig!");
       setShowNext(true);
     } else {
