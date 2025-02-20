@@ -43,9 +43,9 @@ export default function MultiplicationTrainer() {
         {showNext && <button onClick={handleNextTask} style={{ padding: '12px', fontSize: '18px', backgroundColor: '#28a745', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Nächste Aufgabe</button>}
       </div>
       {showApples && (
-        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${task.factor}, auto)`, gap: '4px', marginBottom: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${task.factor}, auto)`, gap: '2px', marginBottom: '16px' }}>
           {[...Array(task.multiplier * task.factor)].map((_, index) => (
-            <span key={index} style={{ fontSize: '24px' }}>🍏</span>
+            <span key={index} style={{ fontSize: '20px' }}>🍏</span>
           ))}
         </div>
       )}
@@ -62,11 +62,11 @@ export default function MultiplicationTrainer() {
           </button>
         ))}
       </div>
-      {message && <p style={{ marginTop: '16px', fontSize: '18px', fontWeight: 'bold', color: '#000000' }}>{message}</p>}
-      <div style={{ marginTop: '20px', textAlign: 'left', color: '#000000' }}>
+      {message && <p style={{ marginTop: '8px', fontSize: '12px', fontWeight: 'bold', color: '#000000' }}>{message}</p>}
+      <div style={{ marginTop: '10px', textAlign: 'left', color: '#000000' }}>
         <ul>
           {history.map((item, index) => (
-            <li key={index} style={{ fontSize: '14px', color: '#000000' }}>{item}</li>
+            <li key={index} style={{ fontSize: '12px', color: '#000000' }}>{item}</li>
           ))}
         </ul>
       </div>
